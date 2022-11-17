@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище SoldiersDbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="Position_ID" />
+          </Key>
+          <Property Name="Position_ID" Type="int" Nullable="false" />
+          <Property Name="X" Type="int" />
+          <Property Name="Y" Type="int" />
+          <Property Name="first_orientier_X" Type="int" />
+          <Property Name="first_orientier_Y" Type="int" />
+          <Property Name="second_orientier_X" Type="int" />
+          <Property Name="second_orientier_Y" Type="int" />
+        </EntityType>
+        <EntityType Name="Soldier">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="TTX_ID" Type="int" />
+          <Property Name="Side" Type="bit" />
+          <Property Name="Position" Type="int" />
+          <Property Name="Defense" Type="int" />
+          <Property Name="Alive" Type="bit" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TTX">
+          <Key>
+            <PropertyRef Name="ID_TTX" />
+          </Key>
+          <Property Name="ID_TTX" Type="int" Nullable="false" />
+          <Property Name="atk_primary_rad" Type="int" />
+          <Property Name="atk_secondary_rad" Type="int" />
+          <Property Name="is_primary_percing_armor" Type="bit" />
+          <Property Name="burst_length" Type="int" />
+          <Property Name="signature" Type="int" />
+          <Property Name="armor" Type="int" />
+          <Property Name="speed" Type="int" />
+          <Property Name="priority_for_enemy" Type="int" />
+          <Property Name="hit_chance_primary" Type="real" />
+          <Property Name="hit_chance_secondary" Type="real" />
+        </EntityType>
+        <Association Name="FK_Soldier_Position">
+          <End Role="Position" Type="Self.Position" Multiplicity="0..1" />
+          <End Role="Soldier" Type="Self.Soldier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="Position_ID" />
+            </Principal>
+            <Dependent Role="Soldier">
+              <PropertyRef Name="Position" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Soldier_TTX">
+          <End Role="TTX" Type="Self.TTX" Multiplicity="0..1" />
+          <End Role="Soldier" Type="Self.Soldier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TTX">
+              <PropertyRef Name="ID_TTX" />
+            </Principal>
+            <Dependent Role="Soldier">
+              <PropertyRef Name="TTX_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище SoldiersDbModelContainer">
+          <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Soldier" EntityType="Self.Soldier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TTX" EntityType="Self.TTX" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Soldier_Position" Association="Self.FK_Soldier_Position">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="Soldier" EntitySet="Soldier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Soldier_TTX" Association="Self.FK_Soldier_TTX">
+            <End Role="TTX" EntitySet="TTX" />
+            <End Role="Soldier" EntitySet="Soldier" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SoldiersDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="Position_ID" />
+          </Key>
+          <Property Name="Position_ID" Type="Int32" Nullable="false" />
+          <Property Name="X" Type="Int32" />
+          <Property Name="Y" Type="Int32" />
+          <Property Name="first_orientier_X" Type="Int32" />
+          <Property Name="first_orientier_Y" Type="Int32" />
+          <Property Name="second_orientier_X" Type="Int32" />
+          <Property Name="second_orientier_Y" Type="Int32" />
+          <NavigationProperty Name="Soldier" Relationship="Self.FK_Soldier_Position" FromRole="Position" ToRole="Soldier" />
+        </EntityType>
+        <EntityType Name="Soldier">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="TTX_ID" Type="Int32" />
+          <Property Name="Side" Type="Boolean" />
+          <Property Name="Position" Type="Int32" />
+          <Property Name="Defense" Type="Int32" />
+          <Property Name="Alive" Type="Boolean" />
+          <NavigationProperty Name="Position1" Relationship="Self.FK_Soldier_Position" FromRole="Soldier" ToRole="Position" />
+          <NavigationProperty Name="TTX" Relationship="Self.FK_Soldier_TTX" FromRole="Soldier" ToRole="TTX" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TTX">
+          <Key>
+            <PropertyRef Name="ID_TTX" />
+          </Key>
+          <Property Name="ID_TTX" Type="Int32" Nullable="false" />
+          <Property Name="atk_primary_rad" Type="Int32" />
+          <Property Name="atk_secondary_rad" Type="Int32" />
+          <Property Name="is_primary_percing_armor" Type="Boolean" />
+          <Property Name="burst_length" Type="Int32" />
+          <Property Name="signature" Type="Int32" />
+          <Property Name="armor" Type="Int32" />
+          <Property Name="speed" Type="Int32" />
+          <Property Name="priority_for_enemy" Type="Int32" />
+          <Property Name="hit_chance_primary" Type="Single" />
+          <Property Name="hit_chance_secondary" Type="Single" />
+          <NavigationProperty Name="Soldier" Relationship="Self.FK_Soldier_TTX" FromRole="TTX" ToRole="Soldier" />
+        </EntityType>
+        <Association Name="FK_Soldier_Position">
+          <End Role="Position" Type="Self.Position" Multiplicity="0..1" />
+          <End Role="Soldier" Type="Self.Soldier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="Position_ID" />
+            </Principal>
+            <Dependent Role="Soldier">
+              <PropertyRef Name="Position" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Soldier_TTX">
+          <End Role="TTX" Type="Self.TTX" Multiplicity="0..1" />
+          <End Role="Soldier" Type="Self.Soldier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TTX">
+              <PropertyRef Name="ID_TTX" />
+            </Principal>
+            <Dependent Role="Soldier">
+              <PropertyRef Name="TTX_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SoldiersDb" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Position" EntityType="Self.Position" />
+          <EntitySet Name="Soldier" EntityType="Self.Soldier" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TTX" EntityType="Self.TTX" />
+          <AssociationSet Name="FK_Soldier_Position" Association="Self.FK_Soldier_Position">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="Soldier" EntitySet="Soldier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Soldier_TTX" Association="Self.FK_Soldier_TTX">
+            <End Role="TTX" EntitySet="TTX" />
+            <End Role="Soldier" EntitySet="Soldier" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище SoldiersDbModelContainer" CdmEntityContainer="SoldiersDb">
+          <EntitySetMapping Name="Position">
+            <EntityTypeMapping TypeName="SoldiersDbModel.Position">
+              <MappingFragment StoreEntitySet="Position">
+                <ScalarProperty Name="Position_ID" ColumnName="Position_ID" />
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="Y" ColumnName="Y" />
+                <ScalarProperty Name="first_orientier_X" ColumnName="first_orientier_X" />
+                <ScalarProperty Name="first_orientier_Y" ColumnName="first_orientier_Y" />
+                <ScalarProperty Name="second_orientier_X" ColumnName="second_orientier_X" />
+                <ScalarProperty Name="second_orientier_Y" ColumnName="second_orientier_Y" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Soldier">
+            <EntityTypeMapping TypeName="SoldiersDbModel.Soldier">
+              <MappingFragment StoreEntitySet="Soldier">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TTX_ID" ColumnName="TTX_ID" />
+                <ScalarProperty Name="Side" ColumnName="Side" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Defense" ColumnName="Defense" />
+                <ScalarProperty Name="Alive" ColumnName="Alive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SoldiersDbModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TTX">
+            <EntityTypeMapping TypeName="SoldiersDbModel.TTX">
+              <MappingFragment StoreEntitySet="TTX">
+                <ScalarProperty Name="ID_TTX" ColumnName="ID_TTX" />
+                <ScalarProperty Name="atk_primary_rad" ColumnName="atk_primary_rad" />
+                <ScalarProperty Name="atk_secondary_rad" ColumnName="atk_secondary_rad" />
+                <ScalarProperty Name="is_primary_percing_armor" ColumnName="is_primary_percing_armor" />
+                <ScalarProperty Name="burst_length" ColumnName="burst_length" />
+                <ScalarProperty Name="signature" ColumnName="signature" />
+                <ScalarProperty Name="armor" ColumnName="armor" />
+                <ScalarProperty Name="speed" ColumnName="speed" />
+                <ScalarProperty Name="priority_for_enemy" ColumnName="priority_for_enemy" />
+                <ScalarProperty Name="hit_chance_primary" ColumnName="hit_chance_primary" />
+                <ScalarProperty Name="hit_chance_secondary" ColumnName="hit_chance_secondary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

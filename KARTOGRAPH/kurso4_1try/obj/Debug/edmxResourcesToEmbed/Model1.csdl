@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SoldiersDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Position">
+    <Key>
+      <PropertyRef Name="Position_ID" />
+    </Key>
+    <Property Name="Position_ID" Type="Int32" Nullable="false" />
+    <Property Name="X" Type="Int32" />
+    <Property Name="Y" Type="Int32" />
+    <Property Name="first_orientier_X" Type="Int32" />
+    <Property Name="first_orientier_Y" Type="Int32" />
+    <Property Name="second_orientier_X" Type="Int32" />
+    <Property Name="second_orientier_Y" Type="Int32" />
+    <NavigationProperty Name="Soldier" Relationship="Self.FK_Soldier_Position" FromRole="Position" ToRole="Soldier" />
+  </EntityType>
+  <EntityType Name="Soldier">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="TTX_ID" Type="Int32" />
+    <Property Name="Side" Type="Boolean" />
+    <Property Name="Position" Type="Int32" />
+    <Property Name="Defense" Type="Int32" />
+    <Property Name="Alive" Type="Boolean" />
+    <NavigationProperty Name="Position1" Relationship="Self.FK_Soldier_Position" FromRole="Soldier" ToRole="Position" />
+    <NavigationProperty Name="TTX" Relationship="Self.FK_Soldier_TTX" FromRole="Soldier" ToRole="TTX" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TTX">
+    <Key>
+      <PropertyRef Name="ID_TTX" />
+    </Key>
+    <Property Name="ID_TTX" Type="Int32" Nullable="false" />
+    <Property Name="atk_primary_rad" Type="Int32" />
+    <Property Name="atk_secondary_rad" Type="Int32" />
+    <Property Name="is_primary_percing_armor" Type="Boolean" />
+    <Property Name="burst_length" Type="Int32" />
+    <Property Name="signature" Type="Int32" />
+    <Property Name="armor" Type="Int32" />
+    <Property Name="speed" Type="Int32" />
+    <Property Name="priority_for_enemy" Type="Int32" />
+    <Property Name="hit_chance_primary" Type="Single" />
+    <Property Name="hit_chance_secondary" Type="Single" />
+    <NavigationProperty Name="Soldier" Relationship="Self.FK_Soldier_TTX" FromRole="TTX" ToRole="Soldier" />
+  </EntityType>
+  <Association Name="FK_Soldier_Position">
+    <End Role="Position" Type="Self.Position" Multiplicity="0..1" />
+    <End Role="Soldier" Type="Self.Soldier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Position">
+        <PropertyRef Name="Position_ID" />
+      </Principal>
+      <Dependent Role="Soldier">
+        <PropertyRef Name="Position" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Soldier_TTX">
+    <End Role="TTX" Type="Self.TTX" Multiplicity="0..1" />
+    <End Role="Soldier" Type="Self.Soldier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTX">
+        <PropertyRef Name="ID_TTX" />
+      </Principal>
+      <Dependent Role="Soldier">
+        <PropertyRef Name="TTX_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SoldiersDb" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Position" EntityType="Self.Position" />
+    <EntitySet Name="Soldier" EntityType="Self.Soldier" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="TTX" EntityType="Self.TTX" />
+    <AssociationSet Name="FK_Soldier_Position" Association="Self.FK_Soldier_Position">
+      <End Role="Position" EntitySet="Position" />
+      <End Role="Soldier" EntitySet="Soldier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Soldier_TTX" Association="Self.FK_Soldier_TTX">
+      <End Role="TTX" EntitySet="TTX" />
+      <End Role="Soldier" EntitySet="Soldier" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

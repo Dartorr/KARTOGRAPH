@@ -1,0 +1,99 @@
+D:\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\bin\Debug\kurso4_1try.exe.config
+D:\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\bin\Debug\kurso4_1try.exe
+D:\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\bin\Debug\kurso4_1try.pdb
+D:\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\kurso4_1try.csproj.AssemblyReference.cache
+D:\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\kurso4_1try.csproj.SuggestedBindingRedirects.cache
+D:\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\MainWindow.g.cs
+D:\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\App.g.cs
+D:\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\kurso4_1try_MarkupCompile.cache
+D:\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\kurso4_1try_MarkupCompile.lref
+D:\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\MainWindow.baml
+D:\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\kurso4_1try.g.resources
+D:\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\kurso4_1try.Properties.Resources.resources
+D:\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\kurso4_1try.csproj.GenerateResource.cache
+D:\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\kurso4_1try.csproj.CoreCompileInputs.cache
+D:\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\kurso4_1try.exe
+D:\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\kurso4_1try.pdb
+D:\Новая папка с компа другого\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\bin\Debug\kurso4_1try.exe.config
+D:\Новая папка с компа другого\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\bin\Debug\kurso4_1try.exe
+D:\Новая папка с компа другого\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\bin\Debug\kurso4_1try.pdb
+D:\Новая папка с компа другого\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\kurso4_1try.csprojAssemblyReference.cache
+D:\Новая папка с компа другого\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\MainWindow.g.cs
+D:\Новая папка с компа другого\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\App.g.cs
+D:\Новая папка с компа другого\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\kurso4_1try_MarkupCompile.cache
+D:\Новая папка с компа другого\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\kurso4_1try_MarkupCompile.lref
+D:\Новая папка с компа другого\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\MainWindow.baml
+D:\Новая папка с компа другого\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\kurso4_1try.g.resources
+D:\Новая папка с компа другого\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\kurso4_1try.Properties.Resources.resources
+D:\Новая папка с компа другого\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\kurso4_1try.csproj.GenerateResource.cache
+D:\Новая папка с компа другого\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\kurso4_1try.csproj.CoreCompileInputs.cache
+D:\Новая папка с компа другого\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\kurso4_1try.exe
+D:\Новая папка с компа другого\вещи чечлава\Новая папка\kurso4_1try\kurso4_1try\obj\Debug\kurso4_1try.pdb
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\bin\Debug\kurso4_1try.exe.config
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\bin\Debug\kurso4_1try.exe
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\bin\Debug\kurso4_1try.pdb
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\bin\Debug\EntityFramework.dll
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\bin\Debug\EntityFramework.xml
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\App.g.cs
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\kurso4_1try_MarkupCompile.cache
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\kurso4_1try_MarkupCompile.lref
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\kurso4_1try.g.resources
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\kurso4_1try.Properties.Resources.resources
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\kurso4_1try.csproj.GenerateResource.cache
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\kurso4_1try.csproj.CoreCompileInputs.cache
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\kurso4_1try.csproj.CopyComplete
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\kurso4_1try.exe
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\kurso4_1try.pdb
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\kurso4_1try_Content.g.cs
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\orientier_CC.g.cs
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\orientier_CC.baml
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\Victory_Page.g.cs
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\Victory_Page.baml
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\SupportWindows\Before_Sim_Warning_Window.g.cs
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\SupportWindows\Failure_W.g.cs
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\SupportWindows\Tutorial.g.cs
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\SupportWindows\Victory_W.g.cs
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\SupportWindows\Before_Sim_Warning_Window.baml
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\SupportWindows\Failure_W.baml
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\SupportWindows\Tutorial.baml
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\SupportWindows\Victory_W.baml
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\SupportWindows\soldier_game_specifications.g.cs
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\SupportWindows\soldier_game_specifications.baml
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\MainWindow.g.cs
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\MainWindow.baml
+C:\Users\Dartor\source\repos\kurso4_1try_back\kurso4_1try\obj\Debug\kurso4_1try.csproj.AssemblyReference.cache
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\bin\Debug\kurso4_1try.exe.config
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\bin\Debug\kurso4_1try.exe
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\bin\Debug\kurso4_1try.pdb
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\bin\Debug\EntityFramework.dll
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\bin\Debug\EntityFramework.xml
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\kurso4_1try.csproj.AssemblyReference.cache
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\SupportWindows\Before_Sim_Warning_Window.g.cs
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\SupportWindows\Failure_W.g.cs
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\MainWindow.g.cs
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\orientier_CC.g.cs
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\SupportWindows\soldier_game_specifications.g.cs
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\SupportWindows\Tutorial.g.cs
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\SupportWindows\Victory_W.g.cs
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\App.g.cs
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\kurso4_1try_Content.g.cs
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\kurso4_1try_MarkupCompile.cache
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\kurso4_1try_MarkupCompile.lref
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\SupportWindows\Before_Sim_Warning_Window.baml
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\SupportWindows\Failure_W.baml
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\MainWindow.baml
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\orientier_CC.baml
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\SupportWindows\soldier_game_specifications.baml
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\SupportWindows\Tutorial.baml
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\SupportWindows\Victory_W.baml
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\kurso4_1try.g.resources
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\kurso4_1try.Properties.Resources.resources
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\kurso4_1try.csproj.GenerateResource.cache
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\kurso4_1try.csproj.CoreCompileInputs.cache
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\kurso4_1try.csproj.CopyComplete
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\kurso4_1try.exe
+C:\Users\Dartor\source\repos\kurso4_1try_back2\kurso4_1try\obj\Debug\kurso4_1try.pdb

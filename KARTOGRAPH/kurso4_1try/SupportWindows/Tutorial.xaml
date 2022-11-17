@@ -1,0 +1,25 @@
+﻿<Window x:Class="kurso4_1try.Tutorial"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kurso4_1try"
+        mc:Ignorable="d"
+        Title="Tutorial" Height="784.8" Width="1080">
+    <Grid>
+        <Button Content="ОК" HorizontalAlignment="Left" Margin="949,646,0,0" VerticalAlignment="Top" Width="96" Height="38" Click="Button_Click"/>
+        <Rectangle HorizontalAlignment="Left" Height="509" Margin="10,83,-0.4,0" Stroke="Black" VerticalAlignment="Top" Width="1064">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/kurso4_1try;component/Resources/Tutorial.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock Margin="258,0,229.6,0" TextWrapping="Wrap" Text="Краткий туториал" VerticalAlignment="Top" FontSize="48" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,630,0,0" TextWrapping="Wrap" Text="Элементы выбираются кликом мыши" VerticalAlignment="Top" FontSize="30" Height="35" Width="453"/>
+        <TextBlock HorizontalAlignment="Left" Margin="341,592,0,0" TextWrapping="Wrap" Text="Общая последовательность:" VerticalAlignment="Top" FontSize="36" Height="42" Width="503"/>
+        <TextBox HorizontalAlignment="Left" Height="35" Margin="10,670,0,0" TextWrapping="Wrap" Text="1. Установка ориентиров и укреплений" VerticalAlignment="Top" Width="504" IsReadOnly="True" FontSize="20" BorderBrush="{x:Null}"/>
+        <TextBox HorizontalAlignment="Left" Height="40" Margin="10,705,0,0" TextWrapping="Wrap" Text="2. Установка юнита" VerticalAlignment="Top" Width="255" IsReadOnly="True" FontSize="20" BorderBrush="{x:Null}"/>
+        <TextBox HorizontalAlignment="Left" Height="35" Margin="377,670,0,0" TextWrapping="Wrap" Text="3. Установка сектора обстрела" VerticalAlignment="Top" Width="361" IsReadOnly="True" FontSize="20" BorderBrush="{x:Null}"/>
+        <TextBox HorizontalAlignment="Left" Height="36" Margin="377,709,0,0" TextWrapping="Wrap" Text="4. После установки всех юнитов - запуск симуляции через меню" VerticalAlignment="Top" Width="627" IsReadOnly="True" FontSize="20" BorderBrush="{x:Null}"/>
+
+    </Grid>
+</Window>

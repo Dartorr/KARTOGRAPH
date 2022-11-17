@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище SoldiersDbModelContainer" CdmEntityContainer="SoldiersDbEntities">
+    <EntitySetMapping Name="Position">
+      <EntityTypeMapping TypeName="SoldiersDbModel.Position">
+        <MappingFragment StoreEntitySet="Position">
+          <ScalarProperty Name="Position_ID" ColumnName="Position_ID" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="first_orientier_X" ColumnName="first_orientier_X" />
+          <ScalarProperty Name="first_orientier_Y" ColumnName="first_orientier_Y" />
+          <ScalarProperty Name="second_orientier_X" ColumnName="second_orientier_X" />
+          <ScalarProperty Name="second_orientier_Y" ColumnName="second_orientier_Y" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Soldier">
+      <EntityTypeMapping TypeName="SoldiersDbModel.Soldier">
+        <MappingFragment StoreEntitySet="Soldier">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TTX_ID" ColumnName="TTX_ID" />
+          <ScalarProperty Name="Side" ColumnName="Side" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Defense" ColumnName="Defense" />
+          <ScalarProperty Name="Alive" ColumnName="Alive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TTX">
+      <EntityTypeMapping TypeName="SoldiersDbModel.TTX">
+        <MappingFragment StoreEntitySet="TTX">
+          <ScalarProperty Name="ID_TTX" ColumnName="ID_TTX" />
+          <ScalarProperty Name="atk_primary_rad" ColumnName="atk_primary_rad" />
+          <ScalarProperty Name="atk_secondary_rad" ColumnName="atk_secondary_rad" />
+          <ScalarProperty Name="is_primary_percing_armor" ColumnName="is_primary_percing_armor" />
+          <ScalarProperty Name="burst_length" ColumnName="burst_length" />
+          <ScalarProperty Name="signature" ColumnName="signature" />
+          <ScalarProperty Name="armor" ColumnName="armor" />
+          <ScalarProperty Name="speed" ColumnName="speed" />
+          <ScalarProperty Name="priority_for_enemy" ColumnName="priority_for_enemy" />
+          <ScalarProperty Name="hit_chance_primary" ColumnName="hit_chance_primary" />
+          <ScalarProperty Name="hit_chance_secondary" ColumnName="hit_chance_secondary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

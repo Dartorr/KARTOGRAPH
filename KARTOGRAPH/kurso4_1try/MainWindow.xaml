@@ -1,0 +1,115 @@
+﻿<Window x:Class="kurso4_1try.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kurso4_1try"
+        mc:Ignorable="d"
+        Title="Картограф" Height="815" Width="1280" AllowDrop="True" Loaded="Window_Loaded" MinWidth="1280" MinHeight="815" >
+    <Grid x:Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition>
+            </ColumnDefinition>
+            <ColumnDefinition>
+            </ColumnDefinition>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle  Grid.Column="0" x:Name="place_rect" Height="0" VerticalAlignment="Bottom" Opacity="0.3" Fill="Black"  MouseDown="place_rect_MouseDown" Margin="0" MouseMove="place_rect_MouseMove"/>
+
+        <Canvas  x:Name="Main_Canvas">
+            <Button x:Name="end_fortification" Content="Завершить" Canvas.Left="178" Canvas.Top="735" Width="75" Click="end_fortification_Click" BorderBrush="Red" Visibility="Hidden"/>
+            <Rectangle x:Name="enemy_front" Height="67" Canvas.Left="114" Width="200" Stroke="#FF0015FF" RadiusY="13.7" Panel.ZIndex="-1" RadiusX="13.7" StrokeThickness="3" HorizontalAlignment="Left" VerticalAlignment="Top" Opacity="0.5"/>
+            <ProgressBar x:Name="F_PB" Height="10" Canvas.Left="300" Canvas.Top="83" Width="100" Foreground="Red" Value="7" Maximum="7"/>
+            <ProgressBar x:Name="E_PB" Height="10" Canvas.Left="25" Canvas.Top="83" Width="100" Foreground="#FF808AFF" Value="18" Maximum="18"/>
+        </Canvas>
+        <Rectangle  Grid.Column="1" x:Name="lock_rect_army" Height="0" VerticalAlignment="Top" Opacity="0.3" Fill="Black" Panel.ZIndex="999" Margin="0,0,0,-1" />
+        <Rectangle  Grid.Column="2" x:Name="lock_rect_info" Height="0" VerticalAlignment="Top" Opacity="0.3" Fill="Black" Panel.ZIndex="999" Margin="0"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="42.2,106,0,0" VerticalAlignment="Top" Width="100" Grid.Column="2"/>
+        <GridSplitter Grid.Column="1" HorizontalAlignment="Left" Width="5" Margin="0,0,0,-1"/>
+        <GridSplitter Grid.Column="2" Margin="0.2,0,0,-0.4" Width="6" HorizontalAlignment="Left"/>
+        <Image x:Name="current_portrait" Grid.Column="2" HorizontalAlignment="Left" Height="141" Margin="42.2,128,0,0" VerticalAlignment="Top" Width="142" />
+        <Rectangle x:Name="splitter" Height="7" Margin="0,442,0,0" VerticalAlignment="Top" Fill="#FFF1F1F1" Grid.Column="1"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="82,33,81.8,0" TextWrapping="Wrap" Text="Ваши войска" VerticalAlignment="Top" FontSize="30" Width="261"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="41,108,0,0" TextWrapping="Wrap" Text="Общее:" VerticalAlignment="Top" FontSize="17"/>
+        <TextBlock x:Name="common_textblock" Grid.Column="1" HorizontalAlignment="Left" Margin="142,108,0,0" TextWrapping="Wrap" Text="1 отделение" VerticalAlignment="Top" FontSize="17"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="41,142,0,0" TextWrapping="Wrap" Text="Подробно:" VerticalAlignment="Top" FontSize="17"/>
+        <TextBlock x:Name="RP_Count_All_Textblock" Grid.Column="1" HorizontalAlignment="Left" Margin="102,194,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" FontSize="17"/>
+        <TextBlock x:Name="RG_Count_All_Textblock" Grid.Column="1" HorizontalAlignment="Left" Margin="102,226,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" FontSize="17"/>
+        <TextBlock x:Name="SV_Count_All_Textblock" Grid.Column="1" HorizontalAlignment="Left" Margin="102,258,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" FontSize="17"/>
+        <TextBlock x:Name="A_Count_All_Textblock1" Grid.Column="1" HorizontalAlignment="Left" Margin="102,290,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" FontSize="17"/>
+        <TextBlock x:Name="BMP_Count_All_Textblock" Grid.Column="1" HorizontalAlignment="Left" Margin="102,322,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" FontSize="17"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="124,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="17" Text="РП (РПК-74)"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="124,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="17" Text="РГ (РПГ-7)"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="124,258,0,0" TextWrapping="Wrap" Text="СВ (СВД)" VerticalAlignment="Top" FontSize="17"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="124,290,0,0" TextWrapping="Wrap" Text="А (АК-74) (выст. авт)" VerticalAlignment="Top" FontSize="17"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="124,322,0,0" TextWrapping="Wrap" Text="БМП (БМП-2)" VerticalAlignment="Top" FontSize="17"/>
+        <TextBlock x:Name="RP_Count_Textblock" Grid.Column="1" HorizontalAlignment="Left" Margin="382,194,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="17"/>
+        <TextBlock x:Name="RG_Count_Textblock" Grid.Column="1" HorizontalAlignment="Left" Margin="382,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="17"/>
+        <TextBlock x:Name="SV_Count_Textblock" Grid.Column="1" HorizontalAlignment="Left" Margin="382,258,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="17"/>
+        <TextBlock x:Name="A_Count_Textblock1" Grid.Column="1" HorizontalAlignment="Left" Margin="382,290,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" FontSize="17"/>
+        <TextBlock x:Name="BMP_Count_Textblock" Grid.Column="1" HorizontalAlignment="Left" Margin="382,322,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="17">
+            <TextBlock.Background>
+                <ImageBrush/>
+            </TextBlock.Background>
+        </TextBlock>
+        <Rectangle x:Name="RP_Icon_Rect" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="292,194,0,0" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.5,0.5" MouseDown="RP_Icon_Rect_MouseDown">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="Resources\icon_0.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="RG_Icon_Rect" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="292,226,0,0" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.5,0.5" MouseDown="RG_Icon_Rect_MouseDown">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="Resources\icon_1.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="SV_Icon_Rect" Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="292,266,0,0" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.5,0.5" MouseDown="SV_Icon_Rect_MouseDown">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="Resources\icon_2.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="A_Icon_Rect" Grid.Column="1" HorizontalAlignment="Left" Height="8" Margin="292,298,0,0" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.5,0.5" IsEnabled="False" >
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="Resources\icon_3.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="BMP_Icon_Rect" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="292,320,0,0" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.5,0.5" MouseDown="BMP_Icon_Rect_MouseDown">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="Resources\icon_4.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="35,498,34.8,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="28" Text="Ориентиры и укрепления"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="37,666,0,0" TextWrapping="Wrap" Text="Добавить укрепление:" VerticalAlignment="Top" FontSize="17"/>
+        <ComboBox x:Name="fort_type_combobox" Grid.Column="1" HorizontalAlignment="Left" Margin="233,668,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="fort_type_combobox_SelectionChanged">
+            <ComboBoxItem Content="Окоп"/>
+        </ComboBox>
+        <Button x:Name="Fort_Add_Button" Grid.Column="1" Content="Добавить" HorizontalAlignment="Center" Margin="168,712,168.8,0" VerticalAlignment="Top" Width="88" IsEnabled="False" Click="Fort_Add_Button_Click"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Center" Margin="69.2,35,69.6,0" TextWrapping="Wrap" Text="Выделенный обьект" VerticalAlignment="Top" FontSize="30" Width="286"/>
+        <Image x:Name="Selected_Icon_Img" Grid.Column="2" HorizontalAlignment="Left" Height="173" Margin="233.2,128,0,0" VerticalAlignment="Top" Width="173" />
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="42.2,278,0,0" TextWrapping="Wrap" Text="Класс:" VerticalAlignment="Top" FontSize="17"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="43.2,295,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="17" Text="Тип:"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="43.2,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="17" Text="Сторона:"/>
+        <TextBlock x:Name="current_class_textbox" Grid.Column="2" HorizontalAlignment="Left" Margin="106.2,278,0,0" TextWrapping="Wrap" Text="Класс:" VerticalAlignment="Top" FontSize="17"/>
+        <TextBlock x:Name="current_type_textbox" Grid.Column="2" HorizontalAlignment="Left" Margin="90.2,295,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="17" Text="Тип:"/>
+        <TextBlock x:Name="current_eornot_textbox" Grid.Column="2" HorizontalAlignment="Left" Margin="127.2,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="17" Text="Сторона:"/>
+        <Button x:Name="show_char_button" Grid.Column="2" Content="Показать подробные характеристики" HorizontalAlignment="Left" Margin="44.2,356,0,0" VerticalAlignment="Top" Click="show_char_button_Click"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="44.2,456,0,0" TextWrapping="Wrap" Text="Настроить позицию" VerticalAlignment="Top" FontSize="22" Width="238"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="44.2,509,0,0" TextWrapping="Wrap" Text="Сектор обстрела" VerticalAlignment="Top" FontSize="17"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="38.2,538,0,0" TextWrapping="Wrap" Text="Между:" VerticalAlignment="Top" FontSize="17"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="44.2,588,0,0" TextWrapping="Wrap" Text="и" VerticalAlignment="Top" FontSize="17"/>
+        <ComboBox x:Name="or1_combobox" Grid.Column="2" HorizontalAlignment="Left" Margin="37.2,566,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="or1_combobox_SelectionChanged" IsEnabled="False"/>
+        <ComboBox x:Name="or2_combobox" Grid.Column="2" HorizontalAlignment="Left" Margin="37.2,617,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="or2_combobox_SelectionChanged" IsEnabled="False"/>
+        <TextBlock x:Name="PM_Ind" Margin="0,80,0,0" TextWrapping="Wrap" Text="Режим установки юнитов" VerticalAlignment="Top" FontSize="24" Height="41" Panel.ZIndex="50" Visibility="Hidden" TextAlignment="Center" FontWeight="Bold" FontFamily="Raleway" Foreground="White"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="70,547,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="17" Height="24"><Run Text="Ориентиры"/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="RP_Count_All_Textblock_Copy" Grid.Column="1" HorizontalAlignment="Left" Margin="71,592,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="17"/>
+        <Ellipse x:Name="or_ellipse" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="103,589,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" MouseDown="or_ellipse_MouseDown" Fill="#FFC8C8C8"/>
+        <Button x:Name="apply_sec" Content="Применить" Grid.Column="2" HorizontalAlignment="Left" Margin="61.2,670,0,0" VerticalAlignment="Top" Width="75" Click="apply_sec_Click" IsEnabled="False"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="26,167,0,0" TextWrapping="Wrap" Text="Можно установить:" VerticalAlignment="Top" FontSize="17"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="292,166,0,0" TextWrapping="Wrap" Text="Установлено
+:" VerticalAlignment="Top" FontSize="17"/>
+        <Menu VerticalAlignment="Top">
+            <MenuItem x:Name="tutorial_MI" Header="Туториал" Click="tutorial_MI_Click"/>
+            <MenuItem x:Name="begin_simulation_MI" Header="Начать симуляцию" Click="begin_simulation_MI_Click"/>
+        </Menu>
+    </Grid>
+</Window>

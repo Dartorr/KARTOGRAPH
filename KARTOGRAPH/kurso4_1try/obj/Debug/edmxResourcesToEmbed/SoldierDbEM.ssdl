@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище SoldiersDbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Position">
+    <Key>
+      <PropertyRef Name="Position_ID" />
+    </Key>
+    <Property Name="Position_ID" Type="int" Nullable="false" />
+    <Property Name="X" Type="int" />
+    <Property Name="Y" Type="int" />
+    <Property Name="first_orientier_X" Type="int" />
+    <Property Name="first_orientier_Y" Type="int" />
+    <Property Name="second_orientier_X" Type="int" />
+    <Property Name="second_orientier_Y" Type="int" />
+  </EntityType>
+  <EntityType Name="Soldier">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="TTX_ID" Type="int" />
+    <Property Name="Side" Type="bit" />
+    <Property Name="Position" Type="int" />
+    <Property Name="Defense" Type="int" />
+    <Property Name="Alive" Type="bit" />
+  </EntityType>
+  <EntityType Name="TTX">
+    <Key>
+      <PropertyRef Name="ID_TTX" />
+    </Key>
+    <Property Name="ID_TTX" Type="int" Nullable="false" />
+    <Property Name="atk_primary_rad" Type="int" />
+    <Property Name="atk_secondary_rad" Type="int" />
+    <Property Name="is_primary_percing_armor" Type="bit" />
+    <Property Name="burst_length" Type="int" />
+    <Property Name="signature" Type="int" />
+    <Property Name="armor" Type="int" />
+    <Property Name="speed" Type="int" />
+    <Property Name="priority_for_enemy" Type="int" />
+    <Property Name="hit_chance_primary" Type="real" />
+    <Property Name="hit_chance_secondary" Type="real" />
+  </EntityType>
+  <Association Name="FK_Soldier_Position">
+    <End Role="Position" Type="Self.Position" Multiplicity="0..1" />
+    <End Role="Soldier" Type="Self.Soldier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Position">
+        <PropertyRef Name="Position_ID" />
+      </Principal>
+      <Dependent Role="Soldier">
+        <PropertyRef Name="Position" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Soldier_TTX">
+    <End Role="TTX" Type="Self.TTX" Multiplicity="0..1" />
+    <End Role="Soldier" Type="Self.Soldier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTX">
+        <PropertyRef Name="ID_TTX" />
+      </Principal>
+      <Dependent Role="Soldier">
+        <PropertyRef Name="TTX_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище SoldiersDbModelContainer">
+    <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Soldier" EntityType="Self.Soldier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TTX" EntityType="Self.TTX" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Soldier_Position" Association="Self.FK_Soldier_Position">
+      <End Role="Position" EntitySet="Position" />
+      <End Role="Soldier" EntitySet="Soldier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Soldier_TTX" Association="Self.FK_Soldier_TTX">
+      <End Role="TTX" EntitySet="TTX" />
+      <End Role="Soldier" EntitySet="Soldier" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
